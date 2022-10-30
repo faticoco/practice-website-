@@ -7,11 +7,21 @@ const Hello = ({ arr }) => {
         <div >
             {
                 arr.map(title => {
-                    return <div style={{ display: 'inline' }, { margin :20 }} key={title}>{title}   </div>    //printing the array using map function
+
+                    var header_text = {
+                        display: 'inline',
+                        margin: '30px'
+                        
+                    }
+
+                    return <div style={header_text} key={title}>{title}   </div>
+                   //printing the array using map function
                 })
+                < div > <img src="logo.png" alt="react logo" style={{ width: '200px', }} /></div>
             }
         </div>
-    )
+        )
+    
 }
 //adding image in background
 var backgroundimage = {
