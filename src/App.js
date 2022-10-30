@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Background from './jobreed.png'
 
 //component added
 const Hello = ({ arr }) => {
@@ -8,30 +7,30 @@ const Hello = ({ arr }) => {
         <div >
             {
                 arr.map(title => {
-                    return <div style={{ display: 'inline' }} key={title}>{title}   </div>    //printing the array using map function
+                    return <div style={{ display: 'inline' }, { margin :20 }} key={title}>{title}   </div>    //printing the array using map function
                 })
             }
         </div>
     )
 }
-//
+//adding image in background
+var backgroundimage = {
+    width: "500%",
+    height: "800px",
+    backgroundRepeat: 'no-repeat',
+    backgroundImage: "url(" + Background + ")",
+};
 
 //adding divs on the page
-const adding_divs_home_page =()=>
+const Adding_divs_home_page =()=>
 {
-    <style >
-        .bgimg
-        {
-            <img src="pink.jpg" width="500" height="600"/>
-        }
-    </style>
 
     return (
-        <div class="bgimg">
-        <h2>This is a heading in a div element</h2>
-        <p>This is some text in a div element.</p>
-    </div>
-        )
+        <div style={backgroundimage }>
+            <h1>I AM JO BREED</h1>
+            <p>CREATIVE ART DIRECTOR & DESIGNER</p>
+        </div>
+    )
 }
 
 
@@ -44,7 +43,7 @@ function App() {
       <div>
             
             <Hello arr={arr} />;
-            <adding_divs_home_page />;
+            <Adding_divs_home_page />;
      </div>
 
   );
