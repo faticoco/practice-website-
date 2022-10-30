@@ -1,26 +1,32 @@
 import './App.css';
 import Background from './jobreed.png'
-
+import logo from './logo.png'
 //component added
 const Hello = ({ arr }) => {
     return (
+
         <div >
-            {
-                arr.map(title => {
 
-                    var header_text = {
-                        display: 'inline',
-                        margin: '30px'
+            <div style={{ alignItems: 'right' }}>
+                <img src={logo} alt="react logo" style={{ width: '200px' }} />
+                {
+                    arr.map(title => {
+
+                        var header_text = {
+                            display: 'inline',
+                            margin: '30px'
                         
-                    }
+                        }
 
-                    return <div style={header_text} key={title}>{title}   </div>
-                   //printing the array using map function
-                })
-                < div > <img src="logo.png" alt="react logo" style={{ width: '200px', }} /></div>
-            }
+                        return <div style={header_text} key={title}>{title}   </div>
+                       //printing the array using map function
+                    })
+             
+                }
+            </div>
+            
         </div>
-        )
+    )
     
 }
 //adding image in background
