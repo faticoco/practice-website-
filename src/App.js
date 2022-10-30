@@ -2,39 +2,51 @@ import './App.css';
 import Background from './jobreed.png'
 import logo from './logo.png'
 //component added
+function Center({children}) {
+    return (
+        <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+        }}>
+            {children}
+        </div>
+    );
+}
 const Hello = ({ arr }) => {
     return (
 
-        <div >
+            <div>
+                <Center>
+                    <img src={logo} alt="react logo" style={{ width: '200px' }} />
+                    {
+                        arr.map(title => {
 
-            <div style={{ alignItems: 'right' }}>
-                <img src={logo} alt="react logo" style={{ width: '200px' }} />
-                {
-                    arr.map(title => {
-
-                        var header_text = {
-                            display: 'inline',
-                            margin: '30px'
+                            var header_text = {
+                                display: 'inline',
+                                margin: '30px'
                         
-                        }
+                            }
 
-                        return <div style={header_text} key={title}>{title}   </div>
-                       //printing the array using map function
-                    })
+                            return <div style={header_text} key={title}>{title}   </div>
+                           //printing the array using map function
+                        })
              
-                }
+                    }
+                </Center>
             </div>
-            
-        </div>
+   
     )
     
 }
 //adding image in background
-var backgroundimage = {
-    width: "500%",
-    height: "800px",
-    backgroundRepeat: 'no-repeat',
-    backgroundImage: "url(" + Background + ")",
+const Backgroundimage = () =>
+{
+    return (
+        <div >
+            <img src={Background} alt="react background" style={{ width: '400px' }} />
+        </div>
+        )
 };
 
 //adding divs on the page
@@ -42,10 +54,11 @@ const Adding_divs_home_page =()=>
 {
 
     return (
-        <div style={backgroundimage }>
+        <div className="d-inline-flex p-2">
             <h1>I AM JO BREED</h1>
             <p>CREATIVE ART DIRECTOR & DESIGNER</p>
         </div>
+
     )
 }
 
@@ -59,8 +72,12 @@ function App() {
       <div>
             
             <Hello arr={arr} />;
-            <Adding_divs_home_page />;
-     </div>
+            <div className="d-flex p-2">
+                <Adding_divs_home_page />
+                <Backgroundimage />
+            </div>
+      </div>
+
 
   );
 }
