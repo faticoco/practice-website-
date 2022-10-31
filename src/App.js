@@ -2,13 +2,11 @@ import './App.css';
 import Background from './jobreed.png'
 import logo from './logo.png'
 //component added
-function Center({children}) {
+function Center({ children })
+{
+
     return (
-        <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-        }}>
+        <div>
             {children}
         </div>
     );
@@ -54,7 +52,7 @@ const Adding_divs_home_page =()=>
 {
 
     return (
-        <div className="d-inline-flex p-2">
+        <div>
             <h1>I AM JO BREED</h1>
             <p>CREATIVE ART DIRECTOR & DESIGNER</p>
         </div>
@@ -67,18 +65,28 @@ function App() {
 
     const arr = ["HOME", "ABOUT", "PORTFOLIO", "PAGES","BLOG","CONTACT"];
     console.log(arr);
+    var container=
+    {
+        display : "flex",
+        flexdirection: "row reverse",
+        justifycontent : "flex start"
+    }
+
+    var item=
+    {
+        maxwidth : "50%"
+    }
+
     return (
         //calling a component and passing array
       <div>
-            
+            ////////////////usedd flex boxxxxxx
             <Hello arr={arr} />;
-            <div className="d-flex p-2">
+            <div style={container, item}> 
                 <Adding_divs_home_page />
                 <Backgroundimage />
             </div>
       </div>
-
-
   );
 }
 
